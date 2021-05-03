@@ -6,6 +6,11 @@ const openHint = document.querySelector('.hint');
 submitBtn.addEventListener('click', submitAnswer);
 openHint.addEventListener('click', presentHint);
 
+const question1 = ("What year did the film 'Sprited Away' relese in the United States?")
+const question2 = ("Who is the primary composer for Studio Ghibli's productions?")
+const question3 = ("Which of these actors was not part of the English Voice Cast for 'Princess Mononoke'?")
+const question4 = ("How long was 'My Neighbor Totoro' in production for?")
+const question5 = ("What was the first film directed by co-found Hayao Miyazaki?")
 
 const answers1 = ['2001', '2002', '1999', '2004']
 const answers2 = ['Michiru Oshima', 'Hans Zimmer', 'Joe Hisaishi', 'Koji Kondo']
