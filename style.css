@@ -23,6 +23,11 @@ main {
 }
 
 .answers {
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+}
+.optionlist {
     list-style-type: none;
 }
 
