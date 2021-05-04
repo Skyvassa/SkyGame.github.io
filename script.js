@@ -26,15 +26,20 @@ const answerArray = [answers1, answers2, answers3, answers4, answers5]
 
 let currentQuestion = document.querySelector('.questions')
 
+let questionNumber = 0
+
 // Every time the submit button is clicked, the function submitAnswer should review the questionArray, increase the array selected by one, and replace the question
 // with the new question. This increase of i should also reflect on the answers array, which should also increase by one and replace all li in their seperate fields. 
 
 function submitAnswer(event) {
     event.preventDefault;
     console.log("This Submit is Working");
-    for (let i=0; i < questionArray.length; i++){
-        console.log(i);
-        return currentQuestion.innerText = questionArray[i];
+    if (questionNumber === questionArray.length) {
+        return console.log("End of Questions!");
+    } else {
+        currentQuestion.innerText = questionArray[questionNumber];
+        questionNumber += 1;
+        console.log(questionNumber);
     }
 }
 function presentHint() {
