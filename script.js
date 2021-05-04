@@ -8,33 +8,33 @@ const openHint = document.querySelector('.hint');
 submitBtn.addEventListener('click', submitAnswer);
 openHint.addEventListener('click', presentHint);
 
-const questionSet = {
-    question1: {
+const questionSet = [
+    {
         question: "What year did the film 'Sprited Away' release in the United States?",
         correctAnswer: "2002",
         allAnswers: ['2001', '2002', '1999', '2004'],
     },
-    question2: {
+    {
         question: "Who is the primary composer for Studio Ghibli's productions?",
         correctAnswer: "Joe Hisaishi",
         allAnswers: ['Michiru Oshima', 'Hans Zimmer', 'Joe Hisaishi', 'Koji Kondo'],
     },
-    question3: {
+    {
         question: "Which of these actors was not part of the English Voice Cast for 'Princess Mononoke'?",
         correctAnswer: "Kirsten Dunst",
         allAnswers: ['Billy Crudup', 'Billy Bob Thornton', 'Kirsten Dunst', 'Claire Danes'],
     },
-    question4: {
+    {
         question: "How long was 'My Neighbor Totoro' in production for?",
         correctAnswer: "8 Months",
         allAnswers: ['16 Months', '24 Months', '8 Months', '14 Months'],
     },
-    question5: {
+    {
         question: "What was the first film directed by co-found Hayao Miyazaki?",
         correctAnswer: "The Castle of Cogliostro",
         allAnswers: ['My Neighbor Totoro', 'The Castle of Cogliostro', 'Spirited Away', 'Nausicaa of the Valley of the Wind'],
     },
-};
+];
 
 // const question1 = ("What year did the film 'Sprited Away' release in the United States?")
 // const question2 = ("Who is the primary composer for Studio Ghibli's productions?")
@@ -53,23 +53,24 @@ const questionSet = {
 // const answers3 = ['1999', 'Joe Hisaishi', 'Kristen Dunst', '8 Months', 'Spirited Away']
 // const answers4 = ['2004', 'Koji Kondo', 'Claire Danes', '14 Months', 'Nausicaa of the Valley of the Wind']
 
-const hint1 = ("Test1")
-const hint2 = ("Test2")
-const hint3 = ("The odd one out was a famous child actor/actress.")
-const hint4 = ("It's less than one might expect.")
-const hint5 = ("It's not one of Studio Ghibli's more famous films.")
+// const hint1 = ("Test1")
+// const hint2 = ("Test2")
+// const hint3 = ("The odd one out was a famous child actor/actress.")
+// const hint4 = ("It's less than one might expect.")
+// const hint5 = ("It's not one of Studio Ghibli's more famous films.")
 
 // If need to cheat, rather than an array for each question set, can use an array for each
 // question row. IE [2001, Michiru Oshima, Billy Crudup, etc.]
 
-const questionArray = [question1, question2, question3, question4, question5]
-const answerArray = [answers1, answers2, answers3, answers4]
+// const questionArray = [question1, question2, question3, question4, question5]
+// const answerArray = [answers1, answers2, answers3, answers4]
 const hintArray = [
     "It was the same year the Winter Olympics were held in Salt Lake City, Utah.", 
     "A lot of people say they love a good cup of ___ in the morning.", 
     "The odd one out was a famous child actor/actress.", 
     "It's less than one might expect.", 
-    "It's not one of Studio Ghibli's more famous films."]
+    "It's not one of Studio Ghibli's more famous films."
+]
 
 let currentQuestion = document.querySelector('.questions')
 let currentHint = document.querySelector('#hint')
@@ -88,7 +89,7 @@ let questionNumber = 0
 function submitAnswer(event) {
     event.preventDefault();
     console.log("This Submit is Working");
-    if (questionNumber === questionArray.length) {
+    if (questionNumber === questionSet.length) {
         return console.log("End of Questions!");
     } else {
         // if (submittedAnswer = True) {
@@ -97,11 +98,11 @@ function submitAnswer(event) {
         // } else {
         //     console.log("Sorry, that is not the right answer")
         // }
-        currentQuestion.innerText = questionArray[questionNumber];
-        currentAnsA.innerText = answers1[questionNumber];
-        currentAnsB.innerText = answers2[questionNumber];
-        currentAnsC.innerText = answers3[questionNumber];
-        currentAnsD.innerText = answers4[questionNumber];
+        currentQuestion.innerText = questionSet[questionNumber].question;
+        currentAnsA.innerText = questionSet[questionNumber].allAnswers[0];
+        currentAnsB.innerText = questionSet[questionNumber].allAnswers[1];
+        currentAnsC.innerText = questionSet[questionNumber].allAnswers[2];
+        currentAnsD.innerText = questionSet[questionNumber].allAnswers[3];
         questionNumber += 1;
         console.log(questionNumber);
     }
