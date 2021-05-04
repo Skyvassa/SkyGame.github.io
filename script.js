@@ -71,13 +71,13 @@ const hintArray = [
     "It's less than one might expect.", 
     "It's not one of Studio Ghibli's more famous films."
 ]
-
+// Change Radio Button Text https://stackoverflow.com/questions/9945748/how-to-change-the-text-of-a-radio-button
 let currentQuestion = document.querySelector('.questions')
 let currentHint = document.querySelector('#hint')
-let currentAnsA = document.querySelector('#answerA')
-let currentAnsB = document.querySelector('#answerB')
-let currentAnsC = document.querySelector('#answerC')
-let currentAnsD = document.querySelector('#answerD')
+let currentAnsA = document.querySelector('#optionA')
+let currentAnsB = document.querySelector('#optionB')
+let currentAnsC = document.querySelector('#optionC')
+let currentAnsD = document.querySelector('#optionD')
 
 let questionNumber = 0
 
