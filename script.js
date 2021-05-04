@@ -18,13 +18,21 @@ const answers3 = ['Billy Crudup', 'Billy Bob Thornton', 'Kristen Dunst', 'Claire
 const answers4 = ['16 Months', '24 Months', '8 Months', '14 Months']
 const answers5 = ['My Neighbor Totoro', 'The Castle of Cogliostro', 'Spirited Away', 'Nausicaa of the Valley of the Wind']
 
+const hint1 = ("Test1")
+const hint2 = ("Test2")
+const hint3 = ("The odd one out was a famous child actor/actress.")
+const hint4 = ("It's less than one might expect.")
+const hint5 = ("It's not one of Studio Ghibli's more famous films.")
+
 // If need to cheat, rather than an array for each question set, can use an array for each
 // question row. IE [2001, Michiru Oshima, Billy Crudup, etc.]
 
 const questionArray = [`${question1}`, `${question2}`, `${question3}`, `${question4}`, `${question5}`]
 const answerArray = [answers1, answers2, answers3, answers4, answers5]
+const hintArray = [hint1, hint2, hint3, hint4, hint5]
 
 let currentQuestion = document.querySelector('.questions')
+let currentHint = document.querySelector('#hint')
 
 let questionNumber = 0
 
@@ -44,6 +52,9 @@ function submitAnswer(event) {
 }
 function presentHint() {
     console.log("This Hint is Working")
+    questionNumber -= 1;
+    currentHint.innerText = hintArray[questionNumber];
+    questionNumber += 1;
 }
 
 // Seperate Arrays for Qustions and for Answers. When Submitted Answer is
