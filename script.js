@@ -86,6 +86,13 @@ let currentAnsD = document.querySelector('#optionD')
 let questionNumber = 0
 let score = 0
 
+currentQuestion.textContent = questionSet[questionNumber].question;
+currentAnsA.textContent = questionSet[questionNumber].allAnswers[0];
+currentAnsB.textContent = questionSet[questionNumber].allAnswers[1];
+currentAnsC.textContent = questionSet[questionNumber].allAnswers[2];
+currentAnsD.textContent = questionSet[questionNumber].allAnswers[3];
+currentHint.textContent = "";
+
 // Every time the submit button is clicked, the function submitAnswer should review the questionArray, increase the array selected by one, and replace the question
 // with the new question. This increase of i should also reflect on the answers array, which should also increase by one and replace all li in their seperate fields. 
 
@@ -95,31 +102,44 @@ let score = 0
 
 function submitAnswer(event) {
     event.preventDefault();
+    submittedAnswer = 0
+    if (document.querySelector('#answerA').checked) {
+        submittedAnswer = parseInt(document.querySelector('#answerA').value);
+    } else if (document.querySelector('#answerB').checked) {
+        submittedAnswer = parseInt(document.querySelector('#answerB').value);
+    } else if (document.querySelector('#answerC').checked) {
+        submittedAnswer = parseInt(document.querySelector('#answerC').value);
+    } else if (document.querySelector('#answerD').checked) {
+        submittedAnswer = parseInt(document.querySelector('#answerD').value);
+    } else {
+        console.log("You need to select an Answer")
+    }
     console.log("This Submit is Working");
-    submittedAnswer = ("input[name='answer']:checked").val();
     if (questionNumber === questionSet.length) {
-        currentQuestion.innerText = "End of Questions!";
-        currentAnsA.innerText = "";
-        currentAnsB.innerText = "";
-        currentAnsC.innerText = "";
-        currentAnsD.innerText = "";
-        currentHint.innerText = "";
+        currentQuestion.textContent = "End of Questions!";
+        currentAnsA.textContent = "";
+        currentAnsB.textContent = "";
+        currentAnsC.textContent = "";
+        currentAnsD.textContent = "";
+        currentHint.textContent = "";
         return console.log("End of Questions!");
     } else {
         if (submittedAnswer === questionSet[questionNumber].correctAnswer) {
             score += 1;
-            console.log("Correct Answer!")
+            console.log(score);
+            console.log("Correct Answer!");
         } else {
-            console.log("Sorry, that is not the right answer")
+            console.log(score);
+            console.log("Sorry, that is not the right answer");
         }
-        currentScore.innerText = (`${score}/5`)
-        currentQuestion.innerText = questionSet[questionNumber].question;
-        currentAnsA.innerText = questionSet[questionNumber].allAnswers[0];
-        currentAnsB.innerText = questionSet[questionNumber].allAnswers[1];
-        currentAnsC.innerText = questionSet[questionNumber].allAnswers[2];
-        currentAnsD.innerText = questionSet[questionNumber].allAnswers[3];
-        currentHint.innerText = "";
+        currentScore.textContent = (`${score}/5`)
         questionNumber += 1;
+        currentQuestion.textContent = questionSet[questionNumber].question;
+        currentAnsA.textContent = questionSet[questionNumber].allAnswers[0];
+        currentAnsB.textContent = questionSet[questionNumber].allAnswers[1];
+        currentAnsC.textContent = questionSet[questionNumber].allAnswers[2];
+        currentAnsD.textContent = questionSet[questionNumber].allAnswers[3];
+        currentHint.textContent = "";
         console.log(questionNumber);
     }
 }
