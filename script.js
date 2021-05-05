@@ -1,12 +1,16 @@
 // Potential Music Solution https://stackoverflow.com/questions/13402336/play-sound-file-in-a-web-page-in-the-background
 // Useful element change info https://stackoverflow.com/questions/4106809/how-can-i-change-an-elements-text-without-changing-its-child-elements
 // Useful Radio Value https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
+// Change Radio Button Text https://stackoverflow.com/questions/9945748/how-to-change-the-text-of-a-radio-button
+// Possible LI replacement solution https://stackoverflow.com/questions/48974894/how-to-replace-all-the-li-elements-of-an-ul-using-jquery
+
 
 const submitBtn = document.querySelector('.submit');
 const openHint = document.querySelector('.hint');
 
 submitBtn.addEventListener('click', submitAnswer);
 openHint.addEventListener('click', presentHint);
+// Create button that reveals question/answer/submit button/and hint button.
 
 const questionSet = [
     {
@@ -71,7 +75,6 @@ const hintArray = [
     "It's less than one might expect.", 
     "It's not one of Studio Ghibli's more famous films."
 ]
-// Change Radio Button Text https://stackoverflow.com/questions/9945748/how-to-change-the-text-of-a-radio-button
 let currentQuestion = document.querySelector('.questions')
 let currentHint = document.querySelector('#hint')
 let currentAnsA = document.querySelector('#optionA')
@@ -84,7 +87,6 @@ let questionNumber = 0
 // Every time the submit button is clicked, the function submitAnswer should review the questionArray, increase the array selected by one, and replace the question
 // with the new question. This increase of i should also reflect on the answers array, which should also increase by one and replace all li in their seperate fields. 
 
-// Possible LI replacement solution https://stackoverflow.com/questions/48974894/how-to-replace-all-the-li-elements-of-an-ul-using-jquery
 
 function submitAnswer(event) {
     event.preventDefault();
