@@ -15,27 +15,27 @@ openHint.addEventListener('click', presentHint);
 const questionSet = [
     {
         question: "What year did the film 'Sprited Away' release in the United States?",
-        correctAnswer: 4,
+        correctAnswer: 3,
         allAnswers: ['2001', '2004', '1999', '2002'],
     },
     {
         question: "Who is the primary composer for Studio Ghibli's productions?",
-        correctAnswer: 3,
+        correctAnswer: 2,
         allAnswers: ['Michiru Oshima', 'Hans Zimmer', 'Joe Hisaishi', 'Koji Kondo'],
     },
     {
         question: "Which of these actors was not part of the English Voice Cast for 'Princess Mononoke'?",
-        correctAnswer: 3,
+        correctAnswer: 2,
         allAnswers: ['Billy Crudup', 'Billy Bob Thornton', 'Kirsten Dunst', 'Claire Danes'],
     },
     {
         question: "How long was 'My Neighbor Totoro' in production for?",
-        correctAnswer: 2,
+        correctAnswer: 1,
         allAnswers: ['16 Months', '8 Months', '24 Months', '14 Months'],
     },
     {
         question: "What was the first film directed by co-found Hayao Miyazaki?",
-        correctAnswer: 1,
+        correctAnswer: 0,
         allAnswers: ['The Castle of Cogliostro', 'My Neighbor Totoro', 'Spirited Away', 'Nausicaa of the Valley of the Wind'],
     },
 ];
@@ -75,6 +75,7 @@ const hintArray = [
     "It's less than one might expect.", 
     "It's not one of Studio Ghibli's more famous films."
 ]
+let currentScore = document.querySelector('#score')
 let currentQuestion = document.querySelector('.questions')
 let currentHint = document.querySelector('#hint')
 let currentAnsA = document.querySelector('#optionA')
@@ -95,7 +96,7 @@ let score = 0
 function submitAnswer(event) {
     event.preventDefault();
     console.log("This Submit is Working");
-    // ("input[type='radio'][name='answer']:checked").val();
+    submittedAnswer = ("input[name='answer']:checked").val();
     if (questionNumber === questionSet.length) {
         currentQuestion.innerText = "End of Questions!";
         currentAnsA.innerText = "";
@@ -105,12 +106,13 @@ function submitAnswer(event) {
         currentHint.innerText = "";
         return console.log("End of Questions!");
     } else {
-        // if (submittedAnswer === questionSet[questionNumber].correctAnswer) {
-        //     score += 1;
-        //     console.log("Correct Answer!")
-        // } else {
-        //     console.log("Sorry, that is not the right answer")
-        // }
+        if (submittedAnswer === questionSet[questionNumber].correctAnswer) {
+            score += 1;
+            console.log("Correct Answer!")
+        } else {
+            console.log("Sorry, that is not the right answer")
+        }
+        currentScore.innerText = (`${score}/5`)
         currentQuestion.innerText = questionSet[questionNumber].question;
         currentAnsA.innerText = questionSet[questionNumber].allAnswers[0];
         currentAnsB.innerText = questionSet[questionNumber].allAnswers[1];
