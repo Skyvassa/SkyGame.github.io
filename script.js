@@ -15,28 +15,28 @@ openHint.addEventListener('click', presentHint);
 const questionSet = [
     {
         question: "What year did the film 'Sprited Away' release in the United States?",
-        correctAnswer: "2002",
-        allAnswers: ['2001', '2002', '1999', '2004'],
+        correctAnswer: 4,
+        allAnswers: ['2001', '2004', '1999', '2002'],
     },
     {
         question: "Who is the primary composer for Studio Ghibli's productions?",
-        correctAnswer: "Joe Hisaishi",
+        correctAnswer: 3,
         allAnswers: ['Michiru Oshima', 'Hans Zimmer', 'Joe Hisaishi', 'Koji Kondo'],
     },
     {
         question: "Which of these actors was not part of the English Voice Cast for 'Princess Mononoke'?",
-        correctAnswer: "Kirsten Dunst",
+        correctAnswer: 3,
         allAnswers: ['Billy Crudup', 'Billy Bob Thornton', 'Kirsten Dunst', 'Claire Danes'],
     },
     {
         question: "How long was 'My Neighbor Totoro' in production for?",
-        correctAnswer: "8 Months",
-        allAnswers: ['16 Months', '24 Months', '8 Months', '14 Months'],
+        correctAnswer: 2,
+        allAnswers: ['16 Months', '8 Months', '24 Months', '14 Months'],
     },
     {
         question: "What was the first film directed by co-found Hayao Miyazaki?",
-        correctAnswer: "The Castle of Cogliostro",
-        allAnswers: ['My Neighbor Totoro', 'The Castle of Cogliostro', 'Spirited Away', 'Nausicaa of the Valley of the Wind'],
+        correctAnswer: 1,
+        allAnswers: ['The Castle of Cogliostro', 'My Neighbor Totoro', 'Spirited Away', 'Nausicaa of the Valley of the Wind'],
     },
 ];
 
@@ -83,20 +83,31 @@ let currentAnsC = document.querySelector('#optionC')
 let currentAnsD = document.querySelector('#optionD')
 
 let questionNumber = 0
+let score = 0
 
 // Every time the submit button is clicked, the function submitAnswer should review the questionArray, increase the array selected by one, and replace the question
 // with the new question. This increase of i should also reflect on the answers array, which should also increase by one and replace all li in their seperate fields. 
 
+// Every time an answer is selected, need to take the array location from
+// the set of answers, and compare it to the correct answer's # / location.
+// If they match, add 1 to score. If don't, do not add point and move on.
 
 function submitAnswer(event) {
     event.preventDefault();
     console.log("This Submit is Working");
+    // ("input[type='radio'][name='answer']:checked").val();
     if (questionNumber === questionSet.length) {
+        currentQuestion.innerText = "End of Questions!";
+        currentAnsA.innerText = "";
+        currentAnsB.innerText = "";
+        currentAnsC.innerText = "";
+        currentAnsD.innerText = "";
+        currentHint.innerText = "";
         return console.log("End of Questions!");
     } else {
-        // if (submittedAnswer = True) {
-        //     correctAnswers += 1;
-        //     console.log("correct answer!")
+        // if (submittedAnswer === questionSet[questionNumber].correctAnswer) {
+        //     score += 1;
+        //     console.log("Correct Answer!")
         // } else {
         //     console.log("Sorry, that is not the right answer")
         // }
@@ -105,6 +116,7 @@ function submitAnswer(event) {
         currentAnsB.innerText = questionSet[questionNumber].allAnswers[1];
         currentAnsC.innerText = questionSet[questionNumber].allAnswers[2];
         currentAnsD.innerText = questionSet[questionNumber].allAnswers[3];
+        currentHint.innerText = "";
         questionNumber += 1;
         console.log(questionNumber);
     }
