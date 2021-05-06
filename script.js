@@ -1,16 +1,13 @@
 // Potential Music Solution https://stackoverflow.com/questions/13402336/play-sound-file-in-a-web-page-in-the-background
-// Useful element change info https://stackoverflow.com/questions/4106809/how-can-i-change-an-elements-text-without-changing-its-child-elements
 // Useful Radio Value https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
-// Change Radio Button Text https://stackoverflow.com/questions/9945748/how-to-change-the-text-of-a-radio-button
-// Possible LI replacement solution https://stackoverflow.com/questions/48974894/how-to-replace-all-the-li-elements-of-an-ul-using-jquery
-
+// Reset Button https://stackoverflow.com/questions/42049696/is-there-a-way-to-reset-an-html-page-using-a-javascript-function
 
 const submitBtn = document.querySelector('.submit');
 const openHint = document.querySelector('.hint');
+const startBtn = document.querySelector('#start');
+const resetBtn = document.querySelector('.reset');
 
 const gameDisplay = document.querySelector('main');
-const startBtn = document.querySelector('#start');
-
 const answerSet = document.querySelector('.answers')
 
 let questionNumber = 0
@@ -19,13 +16,19 @@ let questionNumber = 0
 // submitBtn.style.display = 'none';
 // openHint.style.display = 'none';
 gameDisplay.style.display = 'none';
+resetBtn.style.display = 'none';
 
 startBtn.addEventListener('click', startGame);
+resetBtn.addEventListener('click', resetGame);
 
 function startGame(event) {
     event.preventDefault();
     gameDisplay.style.display = 'initial';
     startBtn.style.display= 'none';
+}
+function resetGame(event) {
+    event.preventDefault();
+    window.location.reload();
 }
 
 submitBtn.addEventListener('click', submitAnswer);
@@ -146,6 +149,7 @@ function submitAnswer(event) {
         currentScore.textContent = (`${score}/5`)
         currentQuestion.textContent = "End of Questions!";
         answerSet.style.display = 'none';
+        resetBtn.style.display = 'initial';
         return console.log("End of Questions!");
     } else {
         currentScore.textContent = (`${score}/5`)
@@ -255,9 +259,7 @@ function submitAnswer(event) {
 
 function presentHint() {
     console.log("This Hint is Working")
-    questionNumber -= 1;
     currentHint.innerText = hintArray[questionNumber];
-    questionNumber += 1;
 }
 
 // Seperate Arrays for Qustions and for Answers. When Submitted Answer is
