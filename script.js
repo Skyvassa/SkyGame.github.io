@@ -145,11 +145,6 @@ function submitAnswer(event) {
     if (questionNumber === (questionSet.length - 1)) {
         currentScore.textContent = (`${score}/5`)
         currentQuestion.textContent = "End of Questions!";
-        currentAnsA.textContent = "";
-        currentAnsB.textContent = "";
-        currentAnsC.textContent = "";
-        currentAnsD.textContent = "";
-        currentHint.textContent = "";
         answerSet.style.display = 'none';
         return console.log("End of Questions!");
     } else {
