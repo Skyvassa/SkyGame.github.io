@@ -1,9 +1,9 @@
 # SkyGame.github.io
-Skyler's First Project Game
+Skyler's First Game Project 
 ## Description
 This is a trivia game testing a player's knowledge of Studio Ghibli's films.
 ## Brief Example
-*Insert Screenshot Once CSS In Better Shape*
+![Screenshot of 1st Question](C:\Users\svas001\sei\projects\SkyGame.github.io\Photos\1st Screenshot.PNG)
 ## List of Features / User Stories
 * Start button to begin the game and reveal the questions and answers.
 * An active score tracker to follow the successes and misses of the answer submissions
