@@ -11,6 +11,8 @@ const openHint = document.querySelector('.hint');
 const gameDisplay = document.querySelector('main');
 const startBtn = document.querySelector('#start');
 
+const answerSet = document.querySelector('.answers')
+
 let questionNumber = 0
 
 
@@ -132,24 +134,25 @@ function submitAnswer(event) {
         console.log("You need to select an Answer")
     }
     console.log("This Submit is Working");
+    if (submittedAnswer === questionSet[questionNumber].correctAnswer) {
+        score += 1;
+        console.log(score);
+        console.log("Correct Answer!");
+    } else {
+        console.log(score);
+        console.log("Sorry, that is not the right answer");
+    }
     if (questionNumber === (questionSet.length - 1)) {
+        currentScore.textContent = (`${score}/5`)
         currentQuestion.textContent = "End of Questions!";
         currentAnsA.textContent = "";
         currentAnsB.textContent = "";
         currentAnsC.textContent = "";
         currentAnsD.textContent = "";
         currentHint.textContent = "";
-        gameDisplay.style.display = 'none'
+        answerSet.style.display = 'none';
         return console.log("End of Questions!");
     } else {
-        if (submittedAnswer === questionSet[questionNumber].correctAnswer) {
-            score += 1;
-            console.log(score);
-            console.log("Correct Answer!");
-        } else {
-            console.log(score);
-            console.log("Sorry, that is not the right answer");
-        }
         currentScore.textContent = (`${score}/5`)
         questionNumber += 1;
         currentQuestion.textContent = questionSet[questionNumber].question;
@@ -162,6 +165,53 @@ function submitAnswer(event) {
         console.log(questionNumber);
     }
 }
+
+// function submitAnswer(event) {
+//     event.preventDefault();
+//     submittedAnswer = 0
+//     if (document.querySelector('#answerA').checked) {
+//         submittedAnswer = parseInt(document.querySelector('#answerA').value);
+//     } else if (document.querySelector('#answerB').checked) {
+//         submittedAnswer = parseInt(document.querySelector('#answerB').value);
+//     } else if (document.querySelector('#answerC').checked) {
+//         submittedAnswer = parseInt(document.querySelector('#answerC').value);
+//     } else if (document.querySelector('#answerD').checked) {
+//         submittedAnswer = parseInt(document.querySelector('#answerD').value);
+//     } else {
+//         console.log("You need to select an Answer")
+//     }
+//     console.log("This Submit is Working");
+//     if (questionNumber === (questionSet.length - 1)) {
+//         currentQuestion.textContent = "End of Questions!";
+//         currentAnsA.textContent = "";
+//         currentAnsB.textContent = "";
+//         currentAnsC.textContent = "";
+//         currentAnsD.textContent = "";
+//         currentHint.textContent = "";
+//         // gameDisplay.style.display = 'none';
+//         // currentScore.style.display = 'initial';
+//         return console.log("End of Questions!");
+//     } else {
+//         if (submittedAnswer === questionSet[questionNumber].correctAnswer) {
+//             score += 1;
+//             console.log(score);
+//             console.log("Correct Answer!");
+//         } else {
+//             console.log(score);
+//             console.log("Sorry, that is not the right answer");
+//         }
+//         currentScore.textContent = (`${score}/5`)
+//         questionNumber += 1;
+//         currentQuestion.textContent = questionSet[questionNumber].question;
+//         currentAnsA.textContent = questionSet[questionNumber].allAnswers[0];
+//         currentAnsB.textContent = questionSet[questionNumber].allAnswers[1];
+//         currentAnsC.textContent = questionSet[questionNumber].allAnswers[2];
+//         currentAnsD.textContent = questionSet[questionNumber].allAnswers[3];
+//         currentHint.textContent = "";
+        
+//         console.log(questionNumber);
+//     }
+// }
 
 // function submitAnswer(event) {
 //     event.preventDefault();
