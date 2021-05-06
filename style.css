@@ -1,5 +1,6 @@
 body {
     /* background-image: url(https://i.redd.it/azez78z6xax41.jpg); */
+    font-family: 'Noto Serif', serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -14,7 +15,13 @@ body img {
 }
 
 header{
-    background: #EFF6F8;
+    order: -1;
+    background: #3D5F2F;
+    min-height: 5vh;
+}
+input {
+    text-align: center;
+    max-width: 75px;
 }
 
 main {
@@ -23,10 +30,21 @@ main {
     background: #499CAC;
 }
 
+.questions {
+    font-weight: bold;
+    background: #EFF6F8; 
+}
+
 .answers {
-    display:flex;
+    display: absolute;
     flex-direction: column;
-    align-content: center;
+    /* text-align: center;
+    align-content: center; */
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
 }
 
 .optionlist {
@@ -36,6 +54,7 @@ main {
 footer {
     display: flex;
     justify-content: center;
+    min-height: 5vh;
     background: #A17E81;
 }
 

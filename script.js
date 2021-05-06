@@ -63,34 +63,6 @@ const questionSet = [
     },
 ];
 
-// const question1 = ("What year did the film 'Sprited Away' release in the United States?")
-// const question2 = ("Who is the primary composer for Studio Ghibli's productions?")
-// const question3 = ("Which of these actors was not part of the English Voice Cast for 'Princess Mononoke'?")
-// const question4 = ("How long was 'My Neighbor Totoro' in production for?")
-// const question5 = ("What was the first film directed by co-found Hayao Miyazaki?")
-
-// // const answers1 = ['2001', '2002', '1999', '2004']
-// // const answers2 = ['Michiru Oshima', 'Hans Zimmer', 'Joe Hisaishi', 'Koji Kondo']
-// // const answers3 = ['Billy Crudup', 'Billy Bob Thornton', 'Kristen Dunst', 'Claire Danes']
-// // const answers4 = ['16 Months', '24 Months', '8 Months', '14 Months']
-// // const answers5 = ['My Neighbor Totoro', 'The Castle of Cogliostro', 'Spirited Away', 'Nausicaa of the Valley of the Wind']
-
-// const answers1 = ['2001', 'Michiru Oshima', 'Billy Crudup', '16 Months', 'My Neighbor Totoro']
-// const answers2 = ['2002', 'Hans Zimmer', 'Billy Bob Thornton', '24 Months', 'The Castle of Cogliostro']
-// const answers3 = ['1999', 'Joe Hisaishi', 'Kristen Dunst', '8 Months', 'Spirited Away']
-// const answers4 = ['2004', 'Koji Kondo', 'Claire Danes', '14 Months', 'Nausicaa of the Valley of the Wind']
-
-// const hint1 = ("Test1")
-// const hint2 = ("Test2")
-// const hint3 = ("The odd one out was a famous child actor/actress.")
-// const hint4 = ("It's less than one might expect.")
-// const hint5 = ("It's not one of Studio Ghibli's more famous films.")
-
-// If need to cheat, rather than an array for each question set, can use an array for each
-// question row. IE [2001, Michiru Oshima, Billy Crudup, etc.]
-
-// const questionArray = [question1, question2, question3, question4, question5]
-// const answerArray = [answers1, answers2, answers3, answers4]
 const hintArray = [
     "It was the same year the Winter Olympics were held in Salt Lake City, Utah.", 
     "A lot of people say they love a good cup of ___ in the morning.", 
@@ -164,98 +136,6 @@ function submitAnswer(event) {
         console.log(questionNumber);
     }
 }
-
-// function submitAnswer(event) {
-//     event.preventDefault();
-//     submittedAnswer = 0
-//     if (document.querySelector('#answerA').checked) {
-//         submittedAnswer = parseInt(document.querySelector('#answerA').value);
-//     } else if (document.querySelector('#answerB').checked) {
-//         submittedAnswer = parseInt(document.querySelector('#answerB').value);
-//     } else if (document.querySelector('#answerC').checked) {
-//         submittedAnswer = parseInt(document.querySelector('#answerC').value);
-//     } else if (document.querySelector('#answerD').checked) {
-//         submittedAnswer = parseInt(document.querySelector('#answerD').value);
-//     } else {
-//         console.log("You need to select an Answer")
-//     }
-//     console.log("This Submit is Working");
-//     if (questionNumber === (questionSet.length - 1)) {
-//         currentQuestion.textContent = "End of Questions!";
-//         currentAnsA.textContent = "";
-//         currentAnsB.textContent = "";
-//         currentAnsC.textContent = "";
-//         currentAnsD.textContent = "";
-//         currentHint.textContent = "";
-//         // gameDisplay.style.display = 'none';
-//         // currentScore.style.display = 'initial';
-//         return console.log("End of Questions!");
-//     } else {
-//         if (submittedAnswer === questionSet[questionNumber].correctAnswer) {
-//             score += 1;
-//             console.log(score);
-//             console.log("Correct Answer!");
-//         } else {
-//             console.log(score);
-//             console.log("Sorry, that is not the right answer");
-//         }
-//         currentScore.textContent = (`${score}/5`)
-//         questionNumber += 1;
-//         currentQuestion.textContent = questionSet[questionNumber].question;
-//         currentAnsA.textContent = questionSet[questionNumber].allAnswers[0];
-//         currentAnsB.textContent = questionSet[questionNumber].allAnswers[1];
-//         currentAnsC.textContent = questionSet[questionNumber].allAnswers[2];
-//         currentAnsD.textContent = questionSet[questionNumber].allAnswers[3];
-//         currentHint.textContent = "";
-        
-//         console.log(questionNumber);
-//     }
-// }
-
-// function submitAnswer(event) {
-//     event.preventDefault();
-//     submittedAnswer = 0
-//     if (document.querySelector('#answerA').checked) {
-//         submittedAnswer = parseInt(document.querySelector('#answerA').value);
-//     } else if (document.querySelector('#answerB').checked) {
-//         submittedAnswer = parseInt(document.querySelector('#answerB').value);
-//     } else if (document.querySelector('#answerC').checked) {
-//         submittedAnswer = parseInt(document.querySelector('#answerC').value);
-//     } else if (document.querySelector('#answerD').checked) {
-//         submittedAnswer = parseInt(document.querySelector('#answerD').value);
-//     } else {
-//         console.log("You need to select an Answer")
-//     }
-//     console.log("This Submit is Working");
-//     if (questionNumber < questionSet.length) {
-//         if (submittedAnswer === questionSet[questionNumber].correctAnswer) {
-//             score += 1;
-//             console.log(score);
-//             console.log("Correct Answer!");
-//         } else {
-//             console.log(score);
-//             console.log("Sorry, that is not the right answer");
-//         }
-//         currentScore.textContent = (`${score}/5`)
-//         questionNumber += 1;
-//         currentQuestion.textContent = questionSet[questionNumber].question;
-//         currentAnsA.textContent = questionSet[questionNumber].allAnswers[0];
-//         currentAnsB.textContent = questionSet[questionNumber].allAnswers[1];
-//         currentAnsC.textContent = questionSet[questionNumber].allAnswers[2];
-//         currentAnsD.textContent = questionSet[questionNumber].allAnswers[3];
-//         currentHint.textContent = "";
-//     } else {
-//         currentQuestion.textContent = "End of Questions!";
-//         currentAnsA.textContent = "";
-//         currentAnsB.textContent = "";
-//         currentAnsC.textContent = "";
-//         currentAnsD.textContent = "";
-//         currentHint.textContent = "";
-//         return console.log("End of Questions!");
-//         console.log(questionNumber);
-//     }
-// }
-
 
 function presentHint() {
     console.log("This Hint is Working")

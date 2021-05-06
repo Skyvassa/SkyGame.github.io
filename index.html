@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Sky's Game</title>
 </head>
@@ -15,9 +17,9 @@
     </audio> -->
     <img src="Photos/Howl's Garden.jpg" alt='background img'/>
     <header>
-          <div>Music Settings</div>
+          <div></div>
     </header>
-    <input id=start type="button" value="start"/>
+    <input id=start type="button" value="Start"/>
     <main>
         <div class=questions>Question Prompts</div>
         <aside id=score>Score: 0/5</aside>
@@ -26,23 +28,12 @@
             <input id="answerB" type="radio" name="answer" value="1"><label id=optionB></label>
             <input id="answerC" type="radio" name="answer" value="2"><label id=optionC></label>
             <input id="answerD" type="radio" name="answer" value="3"><label id=optionD></label>
-            <!-- <ul class="optionlist">
-                <li id=answerA>Answer A </li>
-                    <input class ="option" type="button" name="answer" value="Answer A">
-                <li id=answerB>Answer B </li>
-                    <input class ="option" type="button" name="answer" value="Answer B">
-                <li id=answerC>Answer C </li>
-                    <input class ="option" type="button" name="answer" value="Answer C">
-                <li id=answerD>Answer D </li>
-                    <input class ="option" type="button" name="answer" value="Answer D">
-            </ul> -->
             <input class ="submit" type="button" value="Submit" />
-            <input class ="hint" type="button" value ="Hint" /><p id="hint"></p>
-            
+            <input class ="hint" type="button" value ="Hint" /><label id="hint"></label>
         </article>
-        <input class ="reset" type="button" value ="reset" />
+        <input class ="reset" type="button" value ="Reset" />
     </main>
-    <footer>This is a footer</footer>
+    <footer></footer>
     <script src="script.js"></script>
 </body>
 
