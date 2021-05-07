@@ -9,17 +9,14 @@ This is a trivia game testing a player's knowledge of Studio Ghibli's films.
 * An active score tracker to follow the successes and misses of the answer submissions
 * An end state that confirms the final score, and offers a reset button to refresh the game and begin from scratch.
 ### Bronze Game
-===
 *A list of questions and answers generated at the beginning of the game.
 *The ability for the questions answered correctly to be tracked.
 *A confirmation that the game has ended.
 ### Silver Game
-===
 *A decorative background that covers the theming of the questions, in this case an image from Studio Ghibli's "Howl's Moving Castle".
 *A Start button to begin the game, and a reset button to start the game anew once a player has finished going through the quiz.
 *A hint button to assist those who are playing the game but otherwise may not be familiar with Studio Ghibli and their works.
 ### Gold Game
-====
 *An audio track that plays while a player is going through the questions, to provide a relaxing atmosphere.
 *Further feedback about if a player selected the correct question or not. 
 ## List of Technologies Used
